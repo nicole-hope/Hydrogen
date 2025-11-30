@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hydrogen</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+  }
+
+  body {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at bottom, #0d0d1a 0%, #000000 100%);
+    overflow: hidden;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* Stars */
+  .stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    opacity: 0.8;
+    animation: twinkle 2s infinite alternate;
+  }
+
+  @keyframes twinkle {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+  }
+
+  /* Shooting stars */
+  .shooting-star {
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(white, transparent);
+    opacity: 0;
+    transform: rotate(-45deg);
+  }
+
+  @keyframes shoot {
+    0% { transform: translate(0,0) rotate(-45deg); opacity: 1; }
+    100% { transform: translate(100vw, 100vh) rotate(-45deg); opacity: 0; }
+  }
+
+  /* Moon with floating animation */
+  .moon {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 30% 30%, #fff, #ccc);
+    border-radius: 50%;
+    box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.3);
+    z-index: 1;
+    animation: floatMoon 6s ease-in-out infinite alternate;
+  }
+
+  @keyframes floatMoon {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(15px); }
+    100% { transform: translateY(0); }
+  }
+
+  /* Message box */
+  .message {
+    position: relative;
+    z-index: 2;
+    max-width: 90%;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    font-size: 0.9em;
+    line-height: 1.5;
+    backdrop-filter: blur(5px);
+    color: #fefefe;
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+
+  /* Hide scrollbar but still scrollable */
+  .message::-webkit-scrollbar {
+    display: none;
+  }
+  .message {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* Heading for Happy 18th */
+  .message h1 {
+    font-size: 1.2em; /* small and mobile-friendly */
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  /* Responsive font size for larger screens */
+  @media(min-width: 600px){
+    .message {
+      font-size: 1em;
+      padding: 25px;
+    }
+    .message h1 {
+      font-size: 1.4em;
+    }
+  }
+
+ @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+     /* Footer below message box */
+  footer {
+    margin-top: 15px;
+    z-index: 2;
+    color: #fefefe;
+    text-align: center;
+
+}
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+<div class="moon"></div>
+
+<div class="message" id="message">
+  <h1>Happy 18th, Babe! </h1>
+  <p><br>
+    Happy Birthday, Mr. Dela Cruz. I made this little gift since I wanted to greet you differently this year. I know what we had was difficult—maybe even a kind of trauma for both of us—but right after that storm, we somehow shine brighter than ever. What we shared wasn’t just a chapter in our lives; it was a step we needed to take. A step that helped us grow, learn about ourselves, and find our own paths to happiness.<br>
+
+  </p>
+  <p><br>
+    So now, I just want to take a moment to thank you—from the bottom of my heart. Even though I hurt you, You’ve been there for me in ways I can’t even put into words. You’ve shown up when I felt lost, when I couldn’t even understand my own feelings, and somehow, you just… got me. You didn’t judge, didn’t turn away, didn’t make me feel small for being messy or confused.<br>
+
+  </p>
+  <p><br>
+    What amazes me the most is how consistent you are. Your kindness, your gentleness, the way you always treat me with care—it never changes. No matter how I feel, no matter how chaotic life gets, you remain steady, and that means more to me than I can say. I want you to know that I see it. I see the way you’re always there emotionally, the way you listen, the way you make me feel understood. I feel safe with you. I feel like I can be myself without having to explain everything perfectly. That is such a rare and beautiful gift, and I’m so grateful for it.<br>
+
+  </p>
+  <p><br>
+    Sometimes I think about the small moments we share—the quiet conversations, the little laughs, even the silences—and I realize how much those moments mean to me. They stay with me longer than I expect. And I notice that being around you, even in the simplest ways, makes everything feel lighter, easier, like somehow life makes a little more sense.<br>
+
+  </p>
+  <p><br>
+    Thank you for your patience, your kindness, and simply for being yourself. I hope I can offer even a little of the care and support you’ve given me, because having you in my life has made me feel truly seen, appreciated, and understood. I hope you see yourself the way I do—someone steady, gentle, unshakably kind, and irreplaceably important. And maybe, quietly, I hope you notice that there’s someone here who notices everything about you, Someone who treasures every piece of you and is deeply thankful for the kindness in your heart.<br>
+  </p>
+
+  <p><br>
+    You are amazing, and I just… I want you to know that you matter so much to me.<br>
+  </p><br>
+    Again, Happiest Birthday My Medicine. <br>
+</div>
+
+<footer>
+  With love and lots of hugs,<br>
+  <strong>— Your Vina. 💌</strong>
+</footer>
+
+<audio id="bgMusic" loop>
+  <source src="Goo Goo Dolls - Iris [xK4ZqrLys_k].mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  const starsContainer = document.getElementById('stars');
+
+  // Generate twinkling stars
+  for(let i = 0; i < 120; i++){
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.style.top = Math.random() * 100 + '%';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.width = star.style.height = Math.random() * 3 + 1 + 'px';
+    star.style.animationDuration = Math.random() * 3 + 2 + 's';
+    starsContainer.appendChild(star);
+  }
+
+  // Shooting stars
+  function shootingStar(){
+    const star = document.createElement('div');
+    star.classList.add('shooting-star');
+    star.style.top = Math.random() * window.innerHeight/2 + 'px';
+    star.style.left = Math.random() * window.innerWidth/2 + 'px';
+    star.style.animation = `shoot ${Math.random() * 1 + 0.5}s linear forwards`;
+    starsContainer.appendChild(star);
+    setTimeout(() => {
+      starsContainer.removeChild(star);
+    }, 2000);
+  }
+  setInterval(shootingStar, 3000);
+
+  // Play music on first touch/click (works on mobile and desktop)
+  const music = document.getElementById('bgMusic');
+  function startMusic() {
+    music.play().catch(() => console.log("User interaction needed to play music"));
+    document.body.removeEventListener('touchstart', startMusic);
+    document.body.removeEventListener('click', startMusic);
+  }
+  document.body.addEventListener('touchstart', startMusic);
+  document.body.addEventListener('click', startMusic);
+</script>
+
+</body>
+</html>
+
+
+
